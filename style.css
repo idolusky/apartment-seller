@@ -68,10 +68,11 @@ label{
     display: grid;
     grid-template-columns: 350px 90px 280px;
     grid-template-areas: 
-    "i la a"
-    "i lpr p"
-    "i lr r"
-    "i lpark park";
+    "i la a "
+    "i lpr p "
+    "i lr r "
+    "i lpark park "
+    "c lf lf ";
     box-shadow: 1px 1px 3px #0a1612;
     margin: 20px;
     padding: 20px;
@@ -158,4 +159,16 @@ button:active{background-color: #443729;}
     padding: 10px;
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
+}
+
+.result>.contactDetails {
+    grid-area: c;
+}
+.features {
+    grid-area: f;
+    position: relative;
+}
+.l-features {
+    grid-area: lf;
+    position: relative;
 }

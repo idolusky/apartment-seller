@@ -7,14 +7,19 @@ $("button").on("click", function () {
     let maxRooms = $("#max-r-input").val()
     let immediate = $("#immed-y")
 
+
     let relevantApts = findRelevantApts(address, minPrice, maxPrice, minRooms, maxRooms, immediate)
     renderApts(relevantApts)
 })
 
 const renderApts = function (apartments) {
     $("#results").empty()
-    console.log(apartments) //array of apartments to render
-    //Your code goes here.
+    // console.log(apartments) //array of apartments to render
+    const source = $("#apartments-template").html()
+    const template = Handlebars.compile(source)
+    const newHTML = template({ apartments: apartments })
+    $("#results").append(newHTML)
 }
+
 
 renderApts(apartments) //renders apartments when page loads
